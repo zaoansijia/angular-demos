@@ -1,0 +1,14 @@
+<div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-group">
+        <div class="form-item">
+            <label>{{"userName"|translate}}</label>
+            <input type="text" formControlName="userName" required maxlength="18" class="form-control">
+        </div>
+        <div class="form-item">
+            <label>{{"password"|translate}}</label>
+            <input type="password" formControlName="password" required maxlength="18" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">{{"login"|translate}}</button>
+    </form>
+    
+</div>

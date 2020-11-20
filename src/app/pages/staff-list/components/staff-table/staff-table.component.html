@@ -1,0 +1,12 @@
+<table class="table-wrapper">
+  <tr>
+    <th>{{"staffNum"|translate}}</th>
+    <th>{{"staffExpectSalary"|translate}}</th>
+    <th>{{"operate"|translate}}</th>
+  </tr>
+  <tr *ngFor="let staff of staffs">
+    <td>{{ staff.staffNo }}</td>
+    <td>{{ staff.salary | priceTransform: isUnion }}</td>
+    <td><button (click)="btnClick.emit()">+</button></td>
+  </tr>
+</table>

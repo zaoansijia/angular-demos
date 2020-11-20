@@ -1,0 +1,29 @@
+.form-group {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 200px;
+    background-color: cornflowerblue;
+    text-align: center;
+    padding: 50px 0;
+}
+.form-group .form-item label{
+    width: 100px;
+    margin-right: 10px;
+    text-align: right;
+    display: inline-block;
+}
+.form-group .form-item {
+    margin-bottom: 15px;
+    margin-right: 75px;
+}
+.form-item input {
+    height: 30px;
+    width: 300px;
+}
+.form-group button {
+    border: 1px solid gray;
+    width: 200px;
+    height: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+}

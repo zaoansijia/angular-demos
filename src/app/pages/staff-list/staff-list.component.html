@@ -1,0 +1,10 @@
+<div class="staff-list">
+    <div class="user">{{'currentUser'|translate}}<b>{{userName}}</b></div>
+    <div class="number">{{'title' | translate}}</div>
+    <div class="info">
+        <span>{{'staffNumber'|translate}}{{staffInfo.staffs.length}}</span>
+        <span>{{'staffExpection'|translate}}: {{salaryIncrease}}</span>
+        <button (click)="changeSalary()">{{isUnion?'￥':'$'}}</button>
+    </div>
+    <app-staff-table [staffs]="staffInfo.staffs" [isUnion]="isUnion" (btnClick)="btnClick()"></app-staff-table>
+</div>
