@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // form
 import {FormBuilder, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
+import { setUserInfo } from '../../storage/userInfo';
 
 @Component({
   selector: 'app-login',
@@ -19,9 +20,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(): void {
-    console.log(this.loginForm, 'form');
+    const userInfo = {
+      userName: this.loginForm.value.userName
+    };
+    setUserInfo(userInfo);
     // 跳转路径 实现的是动态跳转数据
-    this.router.navigate(['/staff'], {queryParams: {userName: this.loginForm.value.userName}});
+    this.router.navigate(['/staffList'], {queryParams: {...userInfo}});
   }
 
 }

@@ -1,8 +1,9 @@
 <div class="staff-list">
+    <button (click)="logout()" class="logout-btn">{{"logout"|translate}}</button>
     <div class="user">{{'currentUser'|translate}}<b>{{userName}}</b></div>
     <div class="number">{{'title' | translate}}</div>
     <div class="info">
-        <span>{{'staffNumber'|translate}}{{staffInfo.staffs.length}}</span>
+        <span>{{'staffNumber'|translate}}: {{staffInfo.staffs.length}}</span>
         <span>{{'staffExpection'|translate}}: {{salaryIncrease}}</span>
         <button (click)="changeSalary()">{{isUnion?'￥':'$'}}</button>
     </div>

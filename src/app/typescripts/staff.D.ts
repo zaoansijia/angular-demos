@@ -8,3 +8,6 @@ export interface StaffInfo {
     username: string;
     staffs: Staff[];
 }
+export interface UserInfo {
+    userName: string;
+}

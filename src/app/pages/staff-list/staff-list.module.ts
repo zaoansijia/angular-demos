@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { StaffListComponent } from './staff-list.component';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './staff-mock-data.service';
+
 import { StaffTableComponent } from './components/staff-table/staff-table.component';
 import { PriceTransformPipe } from '../../shared/pipes/price-transform.pipe';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -22,9 +20,6 @@ export const createTranslateLoader = (http: HttpClient) => {
     PriceTransformPipe,
   ],
   imports: [
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false, passThruUnknownUrl: true }
-    ),
     CommonModule,
     TranslateModule.forChild({
       loader: {
@@ -39,7 +34,7 @@ export const createTranslateLoader = (http: HttpClient) => {
       {
         path: '',
         component: StaffListComponent,
-      }
+      },
     ])
   ]
 })

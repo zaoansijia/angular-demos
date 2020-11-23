@@ -9,5 +9,6 @@
   "test": "Phoebe",
   "userName": "userName",
   "password": "password",
-  "login": "Login"
+  "login": "Login",
+  "logout": "Logout"
 }

@@ -1,5 +1,9 @@
 <div class="container">
-  <button (click)="changeLang()">切换语言</button>
-  <div>{{"test"|translate}}</div>
-  <router-outlet></router-outlet> 
+  <!-- <button (click)="changeLang()">切换语言</button> -->
+  <select name="lang" [ngModel]="langs[0].value" (change)="changeLang($event.target.value)">
+    <option *ngFor="let lang of langs" [value]="lang.value">
+      {{ lang.name }}
+    </option>
+  </select>
+  <router-outlet></router-outlet>
 </div>
