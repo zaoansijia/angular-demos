@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PriceTransformPipe implements PipeTransform {
 
-  transform(value: number, isUnion?: boolean): unknown {
+  transform(value: number, isUnion?: boolean): string {
     return isUnion ? `$ ${value / 10}` : `CN￥ ${value}`;
   }
 
