@@ -1,6 +1,6 @@
 import { ValidatorFn, AbstractControl } from '@angular/forms';
 
-export function validateRex(type: string, validateRex: RegExp): ValidatorFn {
+export function validateRex(type: string, validRex: RegExp): ValidatorFn {
 
     return (control: AbstractControl): { [key: string]: any } => {
 
@@ -10,7 +10,7 @@ export function validateRex(type: string, validateRex: RegExp): ValidatorFn {
         const res = {};
         res[type] = { str };
         // 如果验证通过则返回 null 否则返回一个对象（包含我们自定义的属性）
-        return validateRex.test(str) ? null : res;
+        return validRex.test(str) ? null : res;
     };
 
 };

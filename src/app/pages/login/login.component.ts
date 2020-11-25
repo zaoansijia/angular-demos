@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-// form
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms'; // form
 import { Router } from '@angular/router';
 import { setUserInfo } from 'src/app/storage/userInfo';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
 

@@ -7,7 +7,7 @@ import { clearUserInfo } from '../../storage/userInfo';
 @Component({
   selector: 'app-staff-list',
   templateUrl: './staff-list.component.html',
-  styleUrls: ['./staff-list.component.css']
+  styleUrls: ['./staff-list.component.css'],
 })
 export class StaffListComponent implements OnInit {
   staffInfo: StaffInfo = {
