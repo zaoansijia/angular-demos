@@ -1,8 +1,8 @@
+import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { StaffService } from './staff.service';
 import { StaffInfo } from '../../typescripts/staff.D';
 import { ActivatedRoute, Router } from '@angular/router';
-import { clearUserInfo } from '../../storage/userInfo';
 
 @Component({
   selector: 'app-staff-list',
@@ -23,6 +23,7 @@ export class StaffListComponent implements OnInit {
     private service: StaffService,
     private route: ActivatedRoute,
     private router: Router,
+    private userService: UserService,
   ) {
     this.route.queryParams.subscribe(params => {
       this.userName = params.userName;
@@ -51,7 +52,7 @@ export class StaffListComponent implements OnInit {
     this.salaryIncrease = this.salaryIncrease + 1;
   }
   logout(): void {
-    clearUserInfo();
+    this.userService.removeUserInfo();
     // 跳转路径 实现的是动态跳转数据
     this.router.navigate(['/login']);
   }

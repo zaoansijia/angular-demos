@@ -48,9 +48,10 @@ Component装饰器包含多个属性，这些属性的值叫做元数据，Angul
 
 ## 模块相关的一些知识
 1. 也是需要装饰器```@ngModule```给包裹元数据，元数据包含
-* ```declartions```： 组件，管道和指定
+* ```declarations```： 组件，管道和指定
 * ```imports```： 引入一些系统需要的包，必填的BroserModule，常用的HttpClientModule，RouterModule等
 * ```prividers```： 服务注册
+* ```exports```： 导出的一些module和指令和管道（注：如果只是作为一个公共的module供其他module导入，其实module不需要在imports导入，可以直接在exports导出即可，但是管道和指令需在declarations声明）;
 * ```bootstrap```： 根目录示，一般是appCompoent;
 
 ## 关于mock数据
@@ -69,3 +70,48 @@ Component装饰器包含多个属性，这些属性的值叫做元数据，Angul
 > 等同 canActivate，只不过针对是所有子路由
 - ```canDeactivate```
 > 离开时候的路由守卫。提醒用户执行保存操作后才能离开
+## 自定义指令+renderer2
+### 自定义指令
+> 声明自定义文件，再在module里面```declarations```声明
+```java
+@Directive({
+  selector: '[appCustDesign]'
+})
+export class CustDesign implements  OnInit, AfterViewInit{
+
+}
+```
+### renderer2
+> 操作dom的技术，参考如下代码
+```java
+const divEle = this.render2.createElement('div'); // 利用renderer2新建一个div
+const textEle = this.render2.createText('EyeOn'); // 给divEle设置innerText
+const parentNode = this.render2.parentNode(this.el.nativeElement); // 找到input上面的父元素
+this.render2.appendChild(divEle, textEle); // 添加div和text
+this.render2.setAttribute(divEle, 'class', 'on-off'); // 添加class
+this.render2.setProperty(divEle, 'onclick', () => {
+    this.render2.setProperty(divEle, 'innerText', !this.isEyeOn ? 'EyeOn' : 'EyeOff');
+    this.render2.setAttribute(this.el.nativeElement, 'type', !this.isEyeOn ? 'password' : 'text');
+    this.isEyeOn = !this.isEyeOn;
+});
+
+this.render2.appendChild(parentNode, divEle); // 和input同级增加EyeOn
+this.render2.addClass(this.el.nativeElement, 'input-item'); // 给dom添加class
+```
+### 除了利用指令去获取dom，还可以用```viewChild```
+```java
+@ViewChild('appCustDesign') inputDom: ElementRef; // 获取定义dom
+```
+
+# git 相关
+## 添加多个仓库
+```
+git remote add coding https://github.com/zaoansijia/angular-demos.git
+git push coding master
+```
+## 全局设置
+```
+git config list --global // 查看自己的仓库的全局设置
+git config --global -e
+git config --list
+```

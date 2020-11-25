@@ -2,12 +2,12 @@
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-group">
         <div class="form-item">
             <label>{{"userName"|translate}}</label>
-            <input type="text" formControlName="userName" class="input-item" >
+            <input type="text" formControlName="userName" appCustDesign>
             <div *ngIf="formErrors.userName" class="showerr alert alert-danger" >{{ formErrors.userName }}</div>
         </div>
         <div class="form-item">
             <label>{{"password"|translate}}</label>
-            <input type="password" formControlName="password" appCustDesign>
+            <input type="password" formControlName="password" appCustDesign="password">
             <div *ngIf="formErrors.password" class="showerr alert alert-danger" >{{ formErrors.password }}</div>
         </div>
         <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">{{"login"|translate}}</button>

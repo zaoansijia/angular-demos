@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms'; // form
 import { Router } from '@angular/router';
-import { setUserInfo } from 'src/app/storage/userInfo';
+import { UserService } from './../../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    private userService: UserService,
   ) { }
   ngOnInit(): void {
     // 每次表单数据发生变化的时候更新错误信息
@@ -72,7 +73,7 @@ export class LoginComponent implements OnInit {
     const userInfo = {
       userName: this.loginForm.value.userName
     };
-    setUserInfo(userInfo);
+    this.userService.setUserInfo(userInfo);
     // 跳转路径 实现的是动态跳转数据
     this.router.navigate(['/staffList'], { queryParams: { ...userInfo } });
   }
