@@ -1,0 +1,14 @@
+ul {
+    width: 300px;
+    overflow-x: scroll;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+li {
+    min-width: 100px;
+    padding: 30px 5px;
+    text-align: center;
+    border: 1px solid red;
+    cursor: pointer;
+}

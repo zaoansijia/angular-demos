@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   selector: 'app-staff-list',
   templateUrl: './staff-list.component.html',
   styleUrls: ['./staff-list.component.css'],
+  // providers: [StaffService]
 })
 export class StaffListComponent implements OnInit {
   staffInfo: StaffInfo = {

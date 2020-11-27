@@ -1,0 +1,5 @@
+<button (click)="toggle()">TOGGLE</button>
+<div [@openClose]="isOpen ? 'open' : 'close'" class="open-close-container">
+    <p>The box is now {{ isOpen ? 'Open' : 'Close' }}!</p>
+</div>
+

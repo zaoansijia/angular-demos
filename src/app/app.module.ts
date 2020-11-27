@@ -2,6 +2,7 @@ import { MockModule } from './mock/mock.module';
 import { AppRouteModule } from './app-routing.module';
 
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -24,6 +25,7 @@ export const createTranslateLoader = (http: HttpClient) => {
   // 引入需要的一些服务
   imports: [
     BrowserModule, // 浏览器module，必填
+    BrowserAnimationsModule,
     HttpClientModule, // 需要用http请求的时候导入
     FormsModule, // form表单（模板驱动表单ngModule）
     MockModule, // mock数据，数据拦

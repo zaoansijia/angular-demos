@@ -16,6 +16,10 @@ const myRouter: Routes = [
         canActivate: [LoginGuard],
     },
     {
+        path: 'myAnimates',
+        loadChildren: () => import('./pages/animates/animates.module').then(m => m.AnimatesModule)
+    },
+    {
         path: '',
         redirectTo: 'login',
         pathMatch: 'full'

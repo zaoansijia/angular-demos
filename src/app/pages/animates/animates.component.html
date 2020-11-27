@@ -1,0 +1,12 @@
+<p>annimates works!</p>
+<div>
+    <button (click)="changeComponent('open-close')">Open/Close</button>
+    <button (click)="changeComponent('slide-status')">Slide Status</button>
+    <button (click)="changeComponent('auto-calcucation')">Auto Calculation</button>
+</div>
+<div>
+    <app-open-close *ngIf="type==='open-close'"></app-open-close>
+    <app-slide-status *ngIf="type==='slide-status'"></app-slide-status>
+    <app-auto-calcucation *ngIf="type==='auto-calcucation'"></app-auto-calcucation>
+    <app-scroll-test *ngIf="type==='scroll-test'"></app-scroll-test>
+</div>

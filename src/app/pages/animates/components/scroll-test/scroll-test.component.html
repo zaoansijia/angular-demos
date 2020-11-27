@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let item of names;let i = index" [@shrinkOut]="'in'" (click)="btnClick(item.name)">
+        <span>{{item.name}}</span>
+    </li>
+</ul>

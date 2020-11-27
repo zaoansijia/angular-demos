@@ -1,0 +1,26 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+ul li {
+    display: flex;
+    align-items: center;
+    background-color: #EEE;
+    margin-bottom: 10px;
+}
+ul li span {
+    display: inline-block;
+    padding: 10px; 
+    height: 30px;
+    cursor: pointer;
+}
+ul li span:first-child {
+    width: 50px;
+    text-align: center;
+    background-color: green;
+    color: white;
+
+}
+ul li span:last-child {
+
+}
